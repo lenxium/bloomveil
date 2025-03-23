@@ -243,7 +243,8 @@ animations = [{
 }]
 
 [node name="player" type="AnimatedSprite2D"]
+position = Vector2(1, -34)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_h17s1")
-animation = &"idle_up"
+animation = &"idle_down"
 script = ExtResource("2_qhqgy")
