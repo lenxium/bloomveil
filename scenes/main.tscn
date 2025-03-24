@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://dx6jxa0w2m4u0"]
+[gd_scene load_steps=11 format=4 uid="uid://dx6jxa0w2m4u0"]
 
 [ext_resource type="Texture2D" uid="uid://dgouggcp5ai3k" path="res://assets/tilesets/RA_Ground_Tiles_B.png" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://5lbe484vxl3p" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://bgdgpp1h5kjwu" path="res://assets/characters/!RA_Jungle_Animation03.png" id="2_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://da8vgn815yekv" path="res://assets/tilesets/RA_Jungle_B.png" id="2_sugp2"]
-[ext_resource type="Script" uid="uid://bsw0456pvpii7" path="res://scripts/player/player.gd" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://3afk02t0bn0b" path="res://scenes/player.tscn" id="4_jyhfs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sugp2"]
 texture = ExtResource("1_0wfyh")
@@ -2135,8 +2134,6 @@ texture = ExtResource("2_sugp2")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_jyhfs")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tbgi4"]
-
 [node name="main" type="Node2D"]
 y_sort_enabled = true
 
@@ -2147,6 +2144,7 @@ tile_set = SubResource("TileSet_jyhfs")
 
 [node name="light" type="TileMapLayer" parent="."]
 z_index = 1
+z_as_relative = false
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD6//z/AAAAAAIAAAA=")
 tile_set = SubResource("TileSet_tefeu")
@@ -2155,24 +2153,4 @@ tile_set = SubResource("TileSet_tefeu")
 tile_map_data = PackedByteArray("AAAEAPb/AAAMAAQAAAAEAPf/AAAMAAUAAAAEAPj/AAAMAAYAAAAEAPn/AAAMAAcAAAAFAPb/AAANAAQAAAAFAPf/AAANAAUAAAAFAPj/AAANAAYAAAAFAPn/AAANAAcAAAAGAPb/AAAOAAQAAAAGAPf/AAAOAAUAAAAGAPj/AAAOAAYAAAAGAPn/AAAOAAcAAAAHAPb/AAAPAAQAAAAHAPf/AAAPAAUAAAAHAPj/AAAPAAYAAAAHAPn/AAAPAAcAAAA=")
 tile_set = SubResource("TileSet_tbgi4")
 
-[node name="player" type="CharacterBody2D" parent="."]
-y_sort_enabled = true
-script = ExtResource("4_tbgi4")
-
-[node name="AnimatedSprite2D" parent="player" instance=ExtResource("1_o5qli")]
-z_index = 1
-y_sort_enabled = true
-animation = &"walk_down"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(1, 5)
-rotation = -1.5786
-shape = SubResource("CapsuleShape2D_tbgi4")
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(1, -34)
-scale = Vector2(4, 4)
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="player" parent="." instance=ExtResource("4_jyhfs")]
