@@ -2172,3 +2172,7 @@ shape = SubResource("CapsuleShape2D_tbgi4")
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(1, -34)
 scale = Vector2(4, 4)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
