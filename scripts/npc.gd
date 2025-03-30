@@ -13,7 +13,7 @@ func _process(_delta):
 func talk():
 	var dialog_box = get_tree().get_current_scene().get_node("UI/DialogBox")
 	var label = dialog_box.get_node("Label")
-	label.text = "Hello, world!"
+	label.text = "Did you know the rise in colon cancer started when processed meat became a daily habit in the West?"
 	dialog_box.visible = true
 
 
