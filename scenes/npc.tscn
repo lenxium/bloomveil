@@ -247,8 +247,8 @@ radius = 2.49995
 height = 9.9998
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_85g3d"]
-radius = 23.0
-height = 46.0
+radius = 20.75
+height = 52.0
 
 [node name="NPC" type="CharacterBody2D"]
 modulate = Color(0.231373, 0.760784, 1, 1)
@@ -270,6 +270,7 @@ shape = SubResource("CapsuleShape2D_tipki")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3.5)
 shape = SubResource("CapsuleShape2D_85g3d")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
